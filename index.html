@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Te Amo Mucho</title>
+
+<style>
+body{
+    background: linear-gradient(135deg, #ffd6e7, #fff5f8);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1{
+    color: #ff4081;
+    font-size: 60px;
+    margin-top: 30px;
+}
+
+.mensaje{
+    font-size: 32px;
+    margin: 20px;
+    animation: flotar 3s infinite alternate;
+}
+
+@keyframes flotar{
+    from{transform: translateY(0px);}
+    to{transform: translateY(-15px);}
+}
+</style>
+</head>
+<body>
+
+<h1>❤️ TE AMO MUCHO ❤️</h1>
+
+<div class="mensaje">🐶❤️ Te amo mucho</div>
+<div class="mensaje">❤️🐶 Te amo muchísimo</div>
+<div class="mensaje">🐶💕 Más de lo que imaginas</div>
+<div class="mensaje">💕🐶 Eres especial</div>
+<div class="mensaje">🐶💖 Te amo infinito</div>
+<div class="mensaje">💖🐶 Siempre contigo</div>
+<div class="mensaje">🐶🌹 Te amo mucho</div>
+<div class="mensaje">🌹🐶 Muchísimo</div>
+<div class="mensaje">🐶💘 Demasiado</div>
+<div class="mensaje">💘🐶 Para siempre</div>
+
+<script>
+setInterval(() => {
+    const corazon = document.createElement("div");
+    corazon.innerHTML = "❤️";
+    corazon.style.position = "fixed";
+    corazon.style.left = Math.random() * window.innerWidth + "px";
+    corazon.style.top = "-20px";
+    corazon.style.fontSize = "30px";
+    document.body.appendChild(corazon);
+
+    let pos = -20;
+
+    const animar = setInterval(() => {
+        pos += 3;
+        corazon.style.top = pos + "px";
+
+        if(pos > window.innerHeight){
+            clearInterval(animar);
+            corazon.remove();
+        }
+    }, 20);
+
+}, 300);
+</script>
+
+</body>
+</html>
